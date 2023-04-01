@@ -17,13 +17,25 @@ namespace Password
             {
                 foreach (char s in sifre)
                 {
-                    if (char.IsDigit(s) != false || char.IsLetter(char.ToLower(s)) != false || char.IsLetter(char.ToUpper(s)) != false)
+                    int a=0;
+                    int b=0;
+                    int c=0;
+                    if (char.IsDigit(s) != false)
                     {
-                        return true;
+                        a++;
 
                     }
-                    return false;
+                     if (char.IsUpper(s) != false)
+                    {
+                        b++;
 
+                    }
+                     if (char.IsLower(s) != false)
+                    {
+                        c++;
+                    }
+                    if(a>0 && b>0 && c>0)
+                        return true;
                 }
                 return false;
             }
